@@ -1,0 +1,6 @@
+dependencies:
+- name: minecraft
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 1.2.0
+digest: sha256:8c1ca6b0e695f2fa6f4244d515df110c87f57962d0a7f8d1bc9386c49e604f43
+generated: "2020-03-14T19:12:39.2274723-07:00"
