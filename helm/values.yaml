@@ -32,10 +32,6 @@ minecraft:
       port: 25575
       password: "CHANGEME!"
       serviceType: NodePort
-      loadBalancerIP:
-      # loadBalancerSourceRanges: []
-      ## Set the externalTrafficPolicy in the Service to either Cluster or Local
-      # externalTrafficPolicy: Cluster
 
     query:
       # If you enable this, your server will be "published" to Gamespy
@@ -43,7 +39,6 @@ minecraft:
       port: 25565
 
   persistence:
-    storageClass: manual
     dataDir:
       enabled: true
       Size: 1Gi
