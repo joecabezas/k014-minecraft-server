@@ -3,6 +3,13 @@ image: itzg/minecraft-server
 imageTag: latest
 
 minecraft:
+  ## Configure resource requests and limits
+  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  ##
+  resources:
+    requests:
+      memory: 1024Mi
+      cpu: 500m
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
@@ -10,7 +17,7 @@ minecraft:
     eula: true
     type: paper
     version: latest
-    difficulty: peaceful
+    difficulty: normal
     # A comma-separated list of player names who should be admins.
     ops: k014
     # A server icon URL for server listings. Auto-scaled and transcoded.
@@ -41,4 +48,4 @@ minecraft:
   persistence:
     dataDir:
       enabled: true
-      Size: 1Gi
+      Size: 5Gi
