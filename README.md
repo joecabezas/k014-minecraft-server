@@ -2,10 +2,7 @@ Install
 ========
 ```
 helm repo add itzg https://itzg.github.io/minecraft-server-charts/
-
-
-cd helm
-helm upgrade --install mc -f values.yaml itzg/minecraft
+helm upgrade --install mc -f helm/values.yaml itzg/minecraft
 ```
 
 remember to create a firewall rule in gcloud

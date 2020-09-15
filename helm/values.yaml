@@ -12,7 +12,7 @@ securityContext:
 minecraftServer:
   eula: true
   type: paper
-  version: 1.16.3
+  version: latest
   difficulty: normal
   # A comma-separated list of player names who should be admins.
   ops: k014
