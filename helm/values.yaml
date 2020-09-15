@@ -2,50 +2,44 @@
 image: itzg/minecraft-server
 imageTag: latest
 
-minecraft:
-  ## Configure resource requests and limits
-  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
-  ##
-  resources:
-    requests:
-      memory: 1024Mi
-      cpu: 500m
-  securityContext:
-    runAsUser: 1000
-    fsGroup: 1000
-  minecraftServer:
-    eula: true
-    type: paper
-    version: latest
-    difficulty: normal
-    # A comma-separated list of player names who should be admins.
-    ops: k014
-    # A server icon URL for server listings. Auto-scaled and transcoded.
-    icon:
-    # Define this if you want a specific map generation seed.
-    levelSeed:
-    # Message of the Day
-    motd: "k014's Minecraft Server!"
-    # Check accounts against Minecraft account service.
-    onlineMode: true
-    # If you adjust this, you may need to adjust resources.requests above to match.
-    memory: 1024M
+resources:
+  requests:
+    memory: 1024Mi
+    cpu: 500m
+securityContext:
+  runAsUser: 0
+  fsGroup: 0
+minecraftServer:
+  eula: true
+  type: paper
+  version: 1.16.3
+  difficulty: normal
+  # A comma-separated list of player names who should be admins.
+  ops: k014
+  # A server icon URL for server listings. Auto-scaled and transcoded.
+  icon:
+  # Message of the Day
+  motd: "k014's Minecraft Server!"
+  # Check accounts against Minecraft account service.
+  onlineMode: true
+  # If you adjust this, you may need to adjust resources.requests above to match.
+  memory: 1024M
+  serviceType: NodePort
+
+  rcon:
+    # If you enable this, make SURE to change your password below.
+    enabled: false
+    port: 25575
+    password: "CHANGEME!"
     serviceType: NodePort
-    loadBalancerIP:
 
-    rcon:
-      # If you enable this, make SURE to change your password below.
-      enabled: false
-      port: 25575
-      password: "CHANGEME!"
-      serviceType: NodePort
+  query:
+    # If you enable this, your server will be "published" to Gamespy
+    enabled: false
+    port: 25565
 
-    query:
-      # If you enable this, your server will be "published" to Gamespy
-      enabled: false
-      port: 25565
-
-  persistence:
-    dataDir:
-      enabled: true
-      Size: 5Gi
+persistence:
+  dataDir:
+    enabled: true
+    Size: 5Gi
+  storageClass: manual
