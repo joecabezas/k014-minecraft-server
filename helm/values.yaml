@@ -4,8 +4,8 @@ imageTag: latest
 
 resources:
   requests:
-    memory: 1024Mi
-    cpu: 500m
+    memory: 4140Mi
+    cpu: 300m
 securityContext:
   runAsUser: 0
   fsGroup: 0
@@ -18,12 +18,13 @@ minecraftServer:
   ops: k014
   # A server icon URL for server listings. Auto-scaled and transcoded.
   icon:
+  maxWorldSize: 15000
   # Message of the Day
   motd: "k014's Minecraft Server!"
   # Check accounts against Minecraft account service.
   onlineMode: true
   # If you adjust this, you may need to adjust resources.requests above to match.
-  memory: 1024M
+  memory: 4140M
   serviceType: NodePort
 
   rcon:
