@@ -4,7 +4,7 @@ imageTag: latest
 
 resources:
   requests:
-    memory: 4140Mi
+    memory: 4111Mi
     cpu: 300m
 securityContext:
   runAsUser: 0
@@ -24,7 +24,7 @@ minecraftServer:
   # Check accounts against Minecraft account service.
   onlineMode: true
   # If you adjust this, you may need to adjust resources.requests above to match.
-  memory: 4140M
+  memory: 4111M
   serviceType: NodePort
 
   rcon:
